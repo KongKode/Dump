@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Griding</title>
+	<style>
+        /* 
+            For Global review
+
+            global template for grid
+
+            only 1 wrapper needed
+            wrapper{
+                -> organise the grid
+            } 
+                
+            wrapper child{
+                -> style the elements
+            }
+        */
+
+		body{
+			color: black;
+			text-align: center;
+		}
+
+        /*  align and justify all at once */
+		#grid{
+			max-width: 1000px;
+			margin: 0 auto;
+			display: grid;
+
+			grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: repeat(2, minmax(100px, auto));
+            grid-gap: 10px;
+            
+            /* default value 
+                is stretch, others are both :   start,end
+                align-items: (for up and down) ;
+                justify-items: (for left and right);           
+             */
+            align-items: end;
+            justify-items: start;
+            background-color: tomato;
+		}
+		#grid div{
+			background: #3bed3b;
+		}
+		#grid div:nth-child(even){
+			background: #ac1212;
+		}
+
+        /* align and justify one by one */
+
+        #grid2{
+			max-width: 1000px;
+			margin: 0 auto;
+			display: grid;
+
+			grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: repeat(2, minmax(100px, auto));
+            grid-gap: 10px;
+            background-color: teal;
+		}
+		#grid2 div{
+			background: #3bed3b;
+		}
+		#grid2 div:nth-child(even){
+			background: #ac1212;
+		}
+
+        /*  */
+        #one{
+            justify-self: start;
+        }
+        #two{
+            align-self: start;
+        }
+        #three{
+            align-self: end;
+            justify-self: start;
+        }
+        #four{
+            align-self: center;
+            justify-self: center;
+        }
+        
+
+	</style>
+</head>
+<body>
+	<p> Justify and align </p>
+	<div id="grid">	
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+		<div>6</div>
+    </div>
+    <br/>
+    <div id="grid2">	
+        <div id="one">1</div>
+        <div id="two">2</div>
+        <div id="three">3</div>
+        <div id="four">4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+</body>
+</html>

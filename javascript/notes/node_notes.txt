@@ -1,0 +1,7 @@
+Node
+	console.log(this) // in node return {} in browser return window.
+
+https://www.youtube.com/watch?v=Tc1EuaefYFo
+http://www.icndb.com/the-jokes-2/
+http://www.json.org/
+https://www.youtube.com/watch?v=00Z8i88iFsc

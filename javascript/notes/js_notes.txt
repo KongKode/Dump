@@ -1,0 +1,151 @@
+Types
+	5 primitive types
+		undefined ,
+		boolean ,
+		string,
+		number.
+	Everything else is an object.
+	Boxing : 
+	The primitive types boolean, string and number can be wrapped by their object counterparts.	
+	These objects are instances of the Boolean , String and Number constructors respectively.
+	
+		?
+		Symbol (new in ECMAScript 6)	
+			***************** checklate
+			https://developer.mozilla.org/en-US/docs/Glossary/Symbol
+Value types
+	by prototypical object reference
+	meaning they inherit their protopyte property and function homologue
+	object :{}
+	array : []
+	
+Variables
+	
+	var a;                          // variable
+	var b = "init";                 // string
+	var c = "Hi" + " " + "Joe";     // = "Hi Joe"
+	var d = 1 + 2 + "3";            // = "33"
+	var e = [2,3,5,8];              // array
+	var f = false;                  // boolean
+	var g = /()/;                   // RegEx
+	var h = function(){};           // function object
+	const PI = 3.14;                // constant
+	var a = 1, b = 2, c = a + b;    // one line
+	let z = 'zzz';                  // block scope local variable
+	
+	lifetime? = until function end.
+
+Object
+	https://www.w3schools.com/jsref/default.asp
+
+	
+	 html DOM object, 
+	see object.js for declaration
+Prototype
+	see proto.js
+scope
+	js use lexical scope.
+
+	Everything is declared within a scope object
+	no object bind it to global scope.  
+
+Compiler
+	hoisting (hisser)
+
+	function definition are hoisted but not variables
+
+		greet(); // work
+		function greet(){
+			console.log('hi');		
+		}
+		console.log(msg); // is undefined
+		msg = "hello";
+		// why?
+
+	2 phases
+		creation
+			save function definition and variables
+				thow err based on syntax
+				function and variables are "undefined" before initialization
+			allocate memory based on declaration
+
+			this is done by parsing the code as an array of char.. giant string!! 
+		execution
+	
+		context
+			remember stack(last in , last out) vs queue(first in , first out || line...)
+	
+	
+	
+Keywords
+
+	url : https://www.w3schools.com/js/js_statements.asp
+
+	Keyword 	Description
+
+	break 		Terminates a switch or a loop
+	continue 	Jumps out of a loop and starts at the top
+	debugger 	Stops the execution of JavaScript, and calls (if available) the debugging function
+	do ... while 	Executes a block of statements, and repeats the block, while a condition is true
+	for 		Marks a block of statements to be executed, as long as a condition is true
+	function 	Declares a function
+	if ... else 	Marks a block of statements to be executed, depending on a condition
+	return 		Exits a function
+	switch 		Marks a block of statements to be executed, depending on different cases
+	try ... catch 	Implements error handling to a block of statements
+	var 		Declares a variable
+
+
+More sections
+	Loading scripts asyncronously
+		Why?in head, the include part can slow the loading
+
+		-create a virtual div
+		-then create a script object with source
+		-append it to div
+
+		<!-- BAD: the pre async / pre preload scanner era -->
+		<script>
+		    var script = document.createElement('script');
+		    script.src = "//somehost.com/awesome-widget.js";
+		    document.getElementsByTagName('head')[0].appendChild(script);
+		</script>
+
+		<!-- GOOD: simpler, faster, and better all around -->
+		<script src="//somehost.com/awesome-widget.js" async></script>
+
+		<script src="..."> 		<script async src="...">
+
+		Blocks DOM construction 	Does not block DOM construction
+		Execution is blocked on CSSOM 	Execution is not blocked on CSSOM
+		Preload scanner discoverable 	Preload scanner discoverable
+		Ordered execution of scripts 	Unordered execution
+		
+		SO?... 
+		use presync : Use where execution order matters, place these scripts at the bottom.
+		use aync : Can be placed anywhere, ideal for scripts that can tolerate out-of-order execution.
+		
+		something like 
+
+		<div id="asyncscript"></div>
+		<script>
+		  (function() {
+		    var s = document.createElement('script'); s.async = true;
+		    s.src = "...";
+		    document.getElementById('asyncscript').appendChild(s);
+		  }());
+		</script>
+		
+		where "s.async = true;" is the same as <script async src="...">
+		<!-- Modern browsers will use 'async', older browsers will use 'defer' -->
+		<script src="//somehost.com/awesome-widget.js" async defer></script>
+
+Aside
+	temp
+	https://en.wikipedia.org/wiki/Five_Ws
+	the Five Ws research structure : Who What When Where Why and a 6th How
+
+scratch
+	idea. gadget.js : prototyping relative std lib features to bind function gadget 	like append global manip to nodestd function processes, child process, var,etc..
+
+

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Griding</title>
+	<style>
+		body{
+			color: black;
+			text-align: center;
+		}
+		/* The container */	
+		.container{
+			max-width: 1000px;
+			margin: 0 auto;
+			display: grid;
+			/* 
+				Now lets combine 
+                Note here the rows exist
+
+                They are just filled 
+                    -> if its 3 columns and 9 rows
+                        logically ->  27 grids 
+                    
+
+			*/
+            grid-template-columns: repeat(2, 1fr);
+		}
+		.container div{
+			background: #30e930;
+		}
+
+        #one{
+            display:grid;
+            grid-template-rows: repeat(3, minmax(100px, auto));
+        }
+        #one div{
+
+            border: 2px solid black;
+        }
+        
+        #two{
+            display:grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+        }
+        #two div{
+            background-color: rgb(0, 0, 255);
+        }
+        #two div:nth-child(even){
+            background-color: violet;
+        }
+        
+
+
+	</style>
+</head>
+<body>
+
+	<p> Nested grid </p>
+		<!-- 	This is the grid	-->
+	<div class="container">
+        <div id="one">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+        </div>
+        <div id="two">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+        </div>
+    </div>
+</body>
+</html>

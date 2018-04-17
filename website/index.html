@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Kong Kode</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Economica" rel="stylesheet"> 
+	<link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+	<script src="main.js"></script>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			
+		}
+		body{
+			font-family: Georgia, 'Times New Roman', Times, serif;
+			width: 100%;
+			height: 100%;
+		}
+		
+		/***************/
+		/*    header   */
+		/***************/
+		/*  5 elements : title, dayword, menu, org, more.
+		*/
+		.grid-header {
+		 	display: grid;	
+  			grid-template-columns: 30% auto 30%;
+  			grid-template-rows: 50% 50%;
+			grid-gap: 5px;
+			background-color: rgb(255, 255, 255);
+			padding: 20px;
+			border: 5px groove darkgreen;
+			background-color: darkgreen;
+			
+		}
+
+		.grid-header > * {
+			color: white;
+			outline-color: gold;
+			outline-style: double;
+			outline-offset: 2px;
+			outline-width: 5px;
+		}
+		.grid-header > #title {
+			grid-column: 1/2;
+			text-align: left;
+			font-family: 'Economica', sans-serif;
+			font-size: 55px;
+			font-style:  italic;	
+		}
+		.grid-header > #dayword{
+			grid-column: 3/4;
+			text-align: right;
+			font-family: 'Playfair Display', serif;
+			font-size: 40px;
+		}
+
+		/***************/
+		/*     menu    */
+		/***************/
+		.grid-header > #menu{	
+			grid-column: 1/2;
+			cursor: pointer;		
+		}
+		.bar1, .bar2, .bar3 {
+		background-color: black;
+		transition: 0.4s;
+		width: 40px;
+		height: 10px;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		}
+
+		.change .bar1 {
+		-webkit-transform: rotate(-45deg) translate(-9px, 6px);
+		transform: rotate(-45deg) translate(-9px, 6px);
+		}
+
+		.change .bar2 {opacity: 0;}
+
+		.change .bar3 {
+		-webkit-transform: rotate(45deg) translate(-8px, -8px);
+		transform: rotate(45deg) translate(-8px, -8px);
+		}
+		/***********************************************************/
+		.grid-header > #org{		
+			grid-column: 2/3;
+			text-align: center;
+			font-family: digit;
+			color: greenyellow;
+			font-size: 40px;
+		}
+		.grid-header > #more{
+			grid-column: 3/4;
+			text-align: right;
+		}
+
+		@font-face {
+			font-family: digit;
+			src: url("ress/digital-7.ttf");
+		}
+		
+		/***************/
+		/*     body    */
+		/***************/
+		/* yea.. like 1 page app
+			Section title : 
+			Section content :
+		*/
+		section{
+			height: 500px;
+			background-color: forestgreen;
+			
+		}
+		section #selection{
+		
+		}
+		
+		/***************/
+		/*   footer    */
+		/***************/
+		footer {
+			background-color: black;
+			color: white;
+			text-align: center;
+		}
+		
+		
+	</style>
+</head>
+<body>
+	<header>
+		<div class="grid-header">
+			<div id="title">
+				<p> Jungle Academy present</p>
+				
+			</div>
+			<div id="dayword"> 
+				Made by monkeys for other monkeys.. 
+			</div>
+			
+			<div id="menu" onclick="myFunction(this)">
+				<div class="bar1"></div>
+				<div class="bar2"></div>
+				<div class="bar3"></div>
+			</div>
+			<script>
+			function myFunction(x) {
+				x.classList.toggle("change");
+			}
+			</script>
+			<div id="org"> The Kong Kode</div>
+			<div id="more" href="#">More?</div>
+			</div>
+	  
+		</div>
+		
+	</header>
+	<main>							
+		<section>
+			<div id="selection">
+				Home
+			</div>
+			<div>
+				
+			</div>
+		</section>
+	</main>
+	<footer>
+			  ___</br>
+			@(õ õ)@</br>
+			  (Y)</br>
+		 </br> 
+		 ^ &nbsp &nbsp ^</br>
+		  [ . ] [ . ]</br>
+		</br>
+			(__|__)</br>
+			(__|__)</br>
+			(__|__)</br>
+		</br>
+		<p style="font-size: 55px"> &#128018</p>
+	</footer>
+	
+	
+</body>
+</html>

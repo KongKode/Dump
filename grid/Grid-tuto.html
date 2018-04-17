@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Griding</title>
+	<style>
+		body{
+			color: black;
+			text-align: center;
+		}
+		/* The container */
+		#normal{
+			max-width: 800px;
+			margin: 0 auto;
+		}
+		#normal div{
+			background: #3bed3b;
+		}
+		/* every div pair  */
+		#normal div:nth-child(even){
+			background: #ac1212;
+		}
+		#columns{
+			max-width: 800px;
+			margin: 0 auto;
+			display: grid;
+			/* 
+				COLUMNS
+
+			Define the number of columns as %
+			-grid-template-columns: 10% 20% 70%; 
+
+			Define the number of columns as fraction of the width
+			-grid-template-columns: 1fr 3fr 1fr; 
+			
+			Or function to repeat(denominator, fraction)
+			-grid-template-columns: repeat(5, 1fr);
+				So total here is denomator 5 ->  of 800px max width
+												= 160px of cells 
+												= where 3*160px is the second row 
+					even if the grid if fucked, 
+					it spawns another row lol...
+			*/
+			grid-template-columns: repeat(5, 1fr);
+		}
+		#columns div{
+			background: #3bed3b;
+		}
+		/* every div pair  */
+		#columns div:nth-child(even){
+			background: #ac1212;
+		}
+		
+		#rows{
+			max-width: 800px;
+			margin: 0 auto;
+			display: grid;
+			/* 
+				Rows
+			
+			Same as columns but for rows
+				mostly for setting the minmax( minvalue, maxvalue )
+			*/
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: repeat(2 , minmax(100px, auto));
+			grid-row-gap: 10px;
+			grid-column-gap: 15px;
+		}
+		#rows div{
+			background: #3bed3b;
+		}
+		/* every div pair  */
+		#rows div:nth-child(even){
+			background: #ac1212;
+		}
+
+	</style>
+</head>
+<body>
+	<p> Block (without grid) </p>
+	<!-- 	This is the normal or usual way to display	-->
+	<div id="normal">
+		<!-- 	These are the div to align with float or flexbox	-->
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+		<div>6</div>
+		<div>7</div>
+		<div>8</div>
+		<div>9</div>
+	</div>
+
+	<p> Columns </p>
+		<!-- 	This is the grid	-->
+	<div id="columns">
+
+		<!-- 	These are the elements we want to place	-->
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+		<div>6</div>
+		<div>7</div>
+		<div>8</div>
+		<div>9</div>
+
+	</div>
+
+	<p> Rows </p>
+
+	<div id="rows">
+
+		<!-- 	These are the elements we want to place	-->
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+		<div>6</div>
+		<div>7</div>
+		<div>8</div>
+		<div>9</div>
+
+	</div>
+
+
+
+</body>
+</html>

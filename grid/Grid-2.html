@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Griding</title>
+	<style>
+		body{
+			color: black;
+			text-align: center;
+		}
+		/* The container */	
+		#nowmix{
+			max-width: 800px;
+			margin: 0 auto;
+			display: grid;
+			/* 
+				Now lets combine 
+                Note here the rows exist
+
+                They are just filled 
+                    -> if its 3 columns and 9 rows
+                        logically ->  27 grids 
+			*/
+			grid-template-columns: repeat(3, minmax(100px, auto));
+			grid-template-rows: repeat(9 , minmax(100px, auto));
+			grid-row-gap: 10px;
+			grid-column-gap: 10px;
+		}
+		#nowmix div{
+			background: #3bed3b;
+		}
+		/* every div pair  */
+		#nowmix div:nth-child(even){
+			background: #ac1212;
+		}
+        
+        .one{
+            /*  see devtools in ff in grid inspect haha
+                grid is awesome,
+                web is now great again :D
+
+                warning lines are not like arrays
+                    starts at 1 end at 4 is inclusive
+                    and if the columns exceed, in the division, 
+                    other columns are created 
+                    to fill the needs
+
+                    use wiselly, but its easy
+                    
+                    tips : the only thing you need 
+                    is a paper and a pencil 
+                    draw your blocks on the grid 
+                    that's is LoL.
+
+                    ALSO 
+                    numbers of columns+1 = num of lines
+                    | 1 | 2 | 3 |<- 4th line
+
+             */
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+        .two{
+            /* same in 1 line */
+            grid-column : 1/3;
+        }
+        /* here the row, same principle 
+			here the span 2 = same but takes the default 
+			starting point as a ref.
+		*/
+        .three{
+            grid-row: span 2;
+
+        }
+        /* ok got it */
+        .four{
+            grid-column: 2/4;
+            grid-row: 3/5;
+        }
+
+
+	</style>
+</head>
+<body>
+
+	<p> Manipulating and mixing </p>
+		<!-- 	This is the grid	-->
+	<div id="nowmix">
+
+		<!-- 	These are the elements we want to place	-->
+		<div class="one">1</div>
+		<div class="two">2</div>
+		<div>3</div>
+		<div class="three">4</div>
+		<div>5</div>
+		<div>6</div>
+		<div>7</div>
+		<div>8</div>
+		<div class="four">9</div>
+
+	</div>
+
+</body>
+</html>
